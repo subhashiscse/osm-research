@@ -1,0 +1,18 @@
+<label>Fill Color:
+    <input type="color" [(ngModel)]="currentFillColor" (change)="updateShapeOptions()" />
+  </label>
+  
+  <label>Stroke Color:
+    <input type="color" [(ngModel)]="currentStrokeColor" (change)="updateShapeOptions()" />
+  </label>
+  
+  <div id="map" style="height: 500px;"></div>
+  <div>
+    <button (click)="saveShape()">Save</button>
+  </div>
+  <div *ngFor="let shape of shapesList; let i = index">
+    <button (click)="editShape(i)">Edit Shape {{ i + 1 }}</button>
+    <button (click)="deleteShape(i)">Delete Shape {{ i + 1 }}</button>
+  </div>
+  
+  
